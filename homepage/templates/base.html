@@ -15,11 +15,9 @@
             <a href="{% url 'crop_prices:logout' %}" class="button">Logout</a>
         {% else %}
             <!-- Removed login and signup links from here -->
-        {% endif %}
+            {% endif %}
+            <a href="{% url 'crop_prices:prices' %}">Crop Prices</a>
     </nav>
-    <header>
-        <h1>{% block header %}{% endblock %}</h1>
-    </header>
     <main>
         {% block content %}{% endblock %}
     </main>

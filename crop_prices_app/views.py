@@ -28,7 +28,7 @@ def logout_view(request):
 @login_required(login_url='crop_prices:login')
 def prices(request):
     crops = Crop.objects.all()
-    prices = Price.objects.filter(date__lte='2024-01-10')[:10]
+    prices = Price.objects.filter(date__lte='2024-01-18')[:10]
     return render(request, 'prices.html', {'crops': crops, 'prices': prices})
 
 def home(request):
