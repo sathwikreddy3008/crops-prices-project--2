@@ -1,0 +1,25 @@
+<!-- blog.html -->
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block header %}Latest Blog Posts{% endblock %}
+
+{% block content %}
+    {% if blog_posts %}
+        <ul>
+            {% for post in blog_posts %}
+                <li>
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.content }}</p>
+                    <p><strong>Author:</strong> {{ post.author }}</p>
+                    <p><strong>Published on:</strong> {{ post.pub_date }}</p>
+                    <a href="{% url 'homepage:delete_blog_post' post.id %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'homepage:create_blog_post' %}">Create a new blog post</a>
+    {% else %}
+        <p>No blog posts available.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}Real-time monitoring of crop prices{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <p>Explore our blog to access more features.</p>
+        <a href="{% url 'crop_prices:logout' %}" class="button">Logout</a>
+    {% else %}
+        <p>Feel free to explore our blog to access more features. Please login to access information about crops and prices.</p>
+        <a href="{% url 'crop_prices:login' %}" class="button">Login</a>
+        <a href="{% url 'crop_prices:signup' %}" class="button">Sign Up</a>
+    {% endif %}
+{% endblock %}

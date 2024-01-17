@@ -1,0 +1,31 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'homepage:home' %}">Home</a>
+        <a href="{% url 'homepage:blog' %}">Blog</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'crop_prices:logout' %}" class="button">Logout</a>
+        {% else %}
+            <!-- Removed login and signup links from here -->
+        {% endif %}
+    </nav>
+    <header>
+        <h1>{% block header %}{% endblock %}</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Domain: Agriculture</p>
+        <p>&copy; 2024 </p>
+    </footer>
+</body>
+</html>

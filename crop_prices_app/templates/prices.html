@@ -1,0 +1,43 @@
+<!-- crop_prices_app/templates/prices.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>crops prices</title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'homepage:home' %}">Home</a>
+        <a href="{% url 'homepage:blog' %}">Blog</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'crop_prices:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'crop_prices:login' %}">Login</a>
+        {% endif %}
+    </nav>
+    <h2>Prices for the Last 10 Days</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Crop</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for price in prices %}
+                <tr>
+                    <td>{{ price.crop.name }}</td>
+                    <td>{{ price.price }}</td>
+                    <td>{{ price.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'crop_prices:logout' %}">Logout</a>
+    <a href="{% url 'crop_prices:home' %}">Go to Home</a>
+</body>
+</html>

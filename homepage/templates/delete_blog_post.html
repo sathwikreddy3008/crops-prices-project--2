@@ -1,0 +1,15 @@
+<!-- homepage/templates/delete_blog_post.html -->
+{% extends 'base.html' %}
+
+{% block title %}Confirm Deletion{% endblock %}
+
+{% block header %}Confirm Deletion{% endblock %}
+
+{% block content %}
+    <p>Are you sure you want to delete the blog post "{{ post.title }}"?</p>
+    <form method="post" action="{% url 'homepage:delete_blog_post' post.id %}">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'homepage:blog' %}">Cancel</a>
+{% endblock %}
