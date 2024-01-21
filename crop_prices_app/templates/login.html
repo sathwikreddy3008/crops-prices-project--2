@@ -27,7 +27,7 @@
         {% if user.is_authenticated %}
             <a href="{% url 'crop_prices:logout' %}">Logout</a>
         {% else %}
-            <a href="{% url 'crop_prices:login' %}" style="color:black;">Login</a>
+            <a href="{% url 'crop_prices:login' %}" >Login</a>
         {% endif %}
     </nav>
     <div class="text-center " style="margin: 15px; padding: 35px;">
@@ -40,7 +40,7 @@
             <label for="password" style="color: black;">Password:</label>
             <input type="password" name="password" required>
             <br>
-            <input type="submit" value="Login">
+            <input class="btn btn-success" type="submit" value="Login">
         </form>
         <a style="color: black;" href="{% url 'crop_prices:home' %}" >Go to Home</a>
     </div>

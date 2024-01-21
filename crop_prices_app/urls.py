@@ -7,7 +7,7 @@ app_name = 'crop_prices'
 urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
-    path('prices/', prices, name='prices'),  # Updated URL pattern for Crop Prices
+    path('prices/', prices, name='prices'),
     path('home/', home, name='home'),
     path('signup/', signup, name='signup'),
 ]

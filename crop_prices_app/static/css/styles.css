@@ -47,8 +47,6 @@ footer {
     width: 100%;
 }
 
-/* Static CSS file, e.g., static/css/styles.css */
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -107,6 +105,3 @@ a.button {
 a.button:hover {
     background-color: #45a049;
 }
-
-/* Additional styles as needed */
-

@@ -32,7 +32,7 @@ def prices(request):
     return render(request, 'prices.html', {'crops': crops, 'prices': prices})
 
 def home(request):
-    return render(request, 'home.html')  # Update with your actual home template
+    return render(request, 'home.html')
 
 def crop_prices_prices(request):
     return render(request, 'prices/prices.html')

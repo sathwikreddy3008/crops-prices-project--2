@@ -18,7 +18,7 @@
                 </li>
                 {% endfor %}
         </ul>
-        <button style="color: black;" href="{% url 'homepage:create_blog_post' %}">Create a new blog post</button>
+        <a style="color: black;" href="{% url 'homepage:create_blog_post' %}">Create a new blog post</a>
     {% else %}
         <p>No blog posts available.</p>
     {% endif %}
