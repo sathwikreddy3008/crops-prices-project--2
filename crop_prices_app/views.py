@@ -34,6 +34,21 @@ def prices(request):
 def home(request):
     return render(request, 'home.html')
 
+'''def home(request):
+    if request.method == 'POST':
+        selected_state = request.POST.get('selected_state')
+        # Do something with the selected_state, e.g., redirect to prices page
+        return redirect('prices')
+
+    crops = Crop.objects.all()
+    prices = Price.objects.all()
+    context = {
+        'crops': crops,
+        'prices': prices,
+    }
+    return render(request, 'home.html', context)'''
+
+
 def crop_prices_prices(request):
     return render(request, 'prices/prices.html')
 
@@ -47,3 +62,6 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+'''def process_state(request):
+    return redirect('')'''

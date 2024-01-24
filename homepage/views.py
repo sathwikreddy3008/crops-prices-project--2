@@ -29,9 +29,7 @@ def delete_blog_post(request, post_id):
     return render(request, 'delete_blog_post.html', {'post': post})
 
 def home(request):
-    '''# Your view logic here
-    if request.user.is_authenticated:
-        # Redirect authenticated users to the state selection page
+    '''if request.user.is_authenticated:
         return redirect('state_form')
 
     crops = Crop.objects.all()
@@ -49,12 +47,4 @@ def crop_prices_prices(request):
     return render(request, 'prices/prices_home.html')
 
 def state_form(request):
-    return render(request, 'state_form.html')
-
-def process_state(request):
-    if request.method == 'POST':
-        selected_state = request.POST.get('state')
-
-        return redirect('app_name:prices')
-    
     return render(request, 'state_form.html')

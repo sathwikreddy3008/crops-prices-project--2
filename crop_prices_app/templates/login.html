@@ -13,15 +13,19 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <style>
             body{
-              background-image: url('https://wallpapercave.com/wp/wp3071210.jpg');
+              background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
               background-size: cover;
-              height:100vh;
-              width: 100vw;
+              /*height:100vh;
+              width: 100vw;*/
+              text-align: center;
+            }
+            h2 {
+            margin-top: 180px;
             }
             </style>
     </head>
 <body >
-    <nav>
+    <!--<nav>
         <a href="{% url 'homepage:home' %}">Home</a>
         <a href="{% url 'homepage:blog' %}">Blog</a>
         {% if user.is_authenticated %}
@@ -29,24 +33,20 @@
         {% else %}
             <a href="{% url 'crop_prices:login' %}" >Login</a>
         {% endif %}
-    </nav>
-    <div class="text-center " style="margin: 15px; padding: 35px;">
-        <h2 style="color: black;">LOGIN</h2>
+    </nav>-->
+    <div class="text-center " style="margin: 15px; padding: 35px; font-size: 20px;">
+        <h2 style="color: rgb(252, 251, 251);font-size: 45px">LOGIN</h2>
         <form method="post" action="{% url 'crop_prices:login' %}">
             {% csrf_token %}
-            <label for="username" style="color: black;">Username:</label>
-            <input type="text" name="username" required>
+            <!--<label for="username" style="color: black;">Username:</label>-->
+            <input type="text" name="username" placeholder="Farmer ID" required>
             <br>
-            <label for="password" style="color: black;">Password:</label>
-            <input type="password" name="password" required>
+            <!--<label for="password" style="color: black;">Password:</label>-->
+            <input type="password" name="password" placeholder="Password" required>
             <br>
-            <input class="btn btn-success" type="submit" value="Login">
+            <input class="btn btn-success  margin-left: 100px ; padding: 35px" type="submit" value="Login">
         </form>
-        <a style="color: black;" href="{% url 'crop_prices:home' %}" >Go to Home</a>
+        <a style="color: rgb(254, 254, 254);" href="{% url 'crop_prices:home' %}" >Go to Home</a>
     </div>
 </body>
-<footer>
-    <p>Domain: Agriculture</p>
-    <p>&copy; 2024 </p>
-</footer>
 </html>
